@@ -1,0 +1,44 @@
+
+
+1. find/var/log -name "*.log" -mtime +15 -size -500M
+
+2. find /path/to/directory -type 1 -exec rm {} \;
+
+3. find /home/user ! -user $ (whoami)
+
+4. find /etc -name "*config*"
+   -perm /o=w
+
+5. grep -v "bash" /etc/passwd
+
+6. grep -r --exclude='*.bin' -1
+   "search_string" /path/to/directory
+
+7. grep -c 3 "error" filename
+
+8. grep "^root" /etc/passwd
+
+9. tar --exclude='*.mp4'
+   -czf archive.tar.gz /home/user
+
+10. tar -xzf archive.tar.gz file.txt
+
+11. tar --append --file=archive.tar
+    newfile.txt
+    gzip archive.tar
+
+12. tar -tzf archive.tar.gz
+
+13. ps -eo pid.comm | grep "java"
+
+14.ls /var/log | grep "error"
+
+15. grep -c "failed" filename
+
+16. tail -n 20 logfile |grep "critical"
+
+17. du -h /home/user |sort -hr
+
+18. du -sh /var --exclude=/var/log
+
+
