@@ -1,0 +1,58 @@
+
+
+1>SELECT * from Employees
+  order by salary desc
+  Limit 5;
+
+
+2>Select * from Employees
+  order by salary asc
+  Limit 10,5;
+
+3>Select d.department_name, sum(e.salary) as totalSalary from Employees e
+  join Departments d
+  on e.department_id= d.department_id
+  group by department_name
+  having sum(salary)>3000;
+
+
+4>Select * from Employees
+  where not salary =7000;
+
+Or 4>Select first_name, salary,
+  CASE
+  when  salary>7000 then 'above 7000'
+  else 'below 7000'
+  end as salaryStructor
+  from Employees;
+
+
+5>Select * from Projects
+  where start_date>=
+  date_sub(curdate(),interval 6 MONTH);
+
+
+7>UPDATE employees
+  set salary=salary+((salary*12)/100)
+  where department_id=(select department_id from Departments where department_name='Finance');
+
+8>Select first_name,last_name from employees
+  where last_name like 'S%';
+
+
+9>Select  d.department_name,count(e.employee_id) as totalEmployee from employees  e
+   join Departments  d
+   on e.department_id= d.department_id
+   group by department_name;
+
+
+10>Select P.project_name,sum(E.hours_worked) as total_hour from EmployeeProjects E
+   join Projects P
+   on E.project_id=P.project_id
+   group by E.project_id;
+
+
+11>select * from employees
+   where salary >(select avg(salary) from employees);
+
+

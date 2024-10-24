@@ -21,7 +21,6 @@ public class Pascal {
     public static void getPreviousArray(int no){
         int[] previous={1};
         System.out.println(Arrays.toString(previous));
-        String st="";
         for (int i=1;i<no;i++){
            previous=getNextArray(previous);
            System.out.println(Arrays.toString(previous));
