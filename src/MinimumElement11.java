@@ -2,8 +2,9 @@ import java.util.Arrays;
 
 public class MinimumElement11 {
     public static void main(String[] args) {
-        int[]arr2={1,2,3,4};//return 1
-        MinimumElement11.minimumNoUsingList(arr2);
+        int[]arr={3,4,5,6,7,1,2};;//return 1
+       // MinimumElement11.minimumNoUsingList(arr);
+        minimumusingBinary(arr);
 
     }
     public static void minimumNoUsingList(int[]arr1){
@@ -19,7 +20,7 @@ public class MinimumElement11 {
                 left=mid+1;
             }
             else {
-                right=mid-1;
+                right=mid;
             }
         }
         System.out.println(arr2[left]);

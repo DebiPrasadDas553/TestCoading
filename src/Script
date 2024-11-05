@@ -55,4 +55,30 @@ Or 4>Select first_name, salary,
 11>select * from employees
    where salary >(select avg(salary) from employees);
 
+12> select date_format(start_date,'%M %d %Y') as StartDate
+    from Projects;
+
+13> Select concat(e.first_name,'',e.last_name)as fullName,d.department_name,p.project_name from Employees e
+    join Departments d on e.department_id=d.department_id
+    join EmployeeProjects s on e.employee_id=s.employee_id
+    join Projects p on s.project_id=p.project_id;
+
+
+15> Select avg(E.salary), D.department_name, count(D.department_id) from Departments D
+    join Employees E on E.department_id=D.department_id
+    group by D.department_name
+    Having count(D.department_id)>1;
+
+16> select concat(first_name,' ',last_name) as fullName
+    from Employees;
+
+17>Update Employees
+   set salary='8500'
+   where salary>8000 and department_id=(select department_id from Departments where department_name='IT');
+
+18> select max(salary) from Employees
+    where department_id=(Select department_id from Departments where department_name='HR');
+
+
+
 

@@ -14,7 +14,7 @@ public class Occurance {
         Map<String, Integer> map = new LinkedHashMap<>();
         for (String s : st) {
             if (map.containsKey(s)) {
-                map.put(s, map.get(s) + 1);
+                map.put(s,map.get(s) + 1);
             } else {
                 map.put(s, 1);
             }
