@@ -13,11 +13,12 @@ public class Occurance {
         String[] st = str.split("");
         Map<String, Integer> map = new LinkedHashMap<>();
         for (String s : st) {
-            if (map.containsKey(s)) {
+            /*if (map.containsKey(s)) {
                 map.put(s,map.get(s) + 1);
             } else {
                 map.put(s, 1);
-            }
+            }*/
+            map.put(s,map.getOrDefault(s,0)+1);
         }
         for (Map.Entry ma : map.entrySet()) {
             System.out.println(ma.getKey() + "-" + ma.getValue());

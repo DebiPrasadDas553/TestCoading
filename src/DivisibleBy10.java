@@ -1,6 +1,6 @@
 public class DivisibleBy10 {
     public static void main(String[] args) {
-        int no=500;
+        int no=100;
         System.out.println(isDivisible(no));
 
     }

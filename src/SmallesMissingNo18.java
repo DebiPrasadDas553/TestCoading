@@ -5,8 +5,8 @@ public class SmallesMissingNo18 {
 
     public static void main(String[] args) {
 
-        int[]arr={1,2,3,4};
-        int no=5;
+        int[]arr={1,2,3,4,6};
+        int no=6;
         SmallesMissingNo18.smallestMissingNo(arr,no);
     }
 

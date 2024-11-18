@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class MinimumElement11 {
     public static void main(String[] args) {
-        int[]arr={3,4,5,6,7,1,2};;//return 1
+        int[]arr={3,4,5,6,7,1,2,9,11};;//return 1
        // MinimumElement11.minimumNoUsingList(arr);
         minimumusingBinary(arr);
 
