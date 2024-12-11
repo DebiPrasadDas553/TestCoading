@@ -81,4 +81,20 @@ Or 4>Select first_name, salary,
 
 
 
+    Create TEMPORARY TABLE employees_projects_temp
+    AS SELECT min(id),project_id, employee_id
+        FROM employees_projects
+        GROUP BY project_id, employee_id
+        HAVING COUNT(*) > 1;
+
+
+        Delete from employees_projects;
+
+
+        Insert into employees_projects (id,project_id,employee_id)
+        Select id,project_id,employee_id from employees_projects_temp;
+
+
+
+
 
