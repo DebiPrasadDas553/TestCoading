@@ -97,4 +97,49 @@ Or 4>Select first_name, salary,
 
 
 
+        Delete from order
+        Where id not in(
+          Select min(id) from order
+          group by cust_id , order_date
+        );
+
+        //Employees working on more than 1 project
+        Select concat(e.first_name, ' ',e.last_name) as emp_name
+        from employees e join employees_projects ep
+        on e.id=ep.employee_id
+        where ep.employee_id in(
+          Select employee_id from employees_projects
+          group by employee_id
+          having COUNT(*)>1
+        );
+
+
+//you want to compare the average salary between departments.
+
+Select d1.name as department1,
+ d2.name as department2 ,
+ ABS(AVG(e1.salary)-AVG(e2.salary)) as avg_salary_gap
+ from employees e1 join employees e2
+ on e1.department_id!=e2.department_id
+ join departments d1
+ on e1.department_id=d1.id
+ join departments d2
+ on e2.department_id=d2.id
+ GROUP by d1.name,
+ d2.name
+ ;
+
+
+//In Employees_Projects table some rows reference employees who no longer exist in the employees table.
+ //Remove these orphaned rows
+
+
+DELETE from employees
+ where id not in(
+  select e.id from employees e join
+  employees_projects ep
+  on e.id=ep.employee_id
+ );
+
+
 
